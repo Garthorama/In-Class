@@ -1,3 +1,5 @@
+alert('Hello, World!');
+
 function doAlert() {
     var myFruits = ["Apples", "Oranges", "Pears", "Bannanas"];
 
