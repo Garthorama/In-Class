@@ -1,0 +1,26 @@
+body {
+    background-color: #0000ff;
+    }
+    
+    p {
+    color: blue;
+    font-size: 30px;
+    background-color: #ADD8E6;
+    }
+    
+    h4 {
+      color: orange;
+      font-weight: 800;
+    }
+    
+    .List {
+      Color: red;
+    }
+    
+    #div {
+      color: green;
+    }
+    
+    #name {
+      color: purple;
+    }
