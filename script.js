@@ -19,7 +19,7 @@ let equalTo;
 
 switch (numberTen == numberFive) {
   case true:
-    equalTo = True;
+    equalTo = true;
     break;
   default:
     equalTo = false;
