@@ -24,3 +24,11 @@ switch (numberTen == numberFive) {
   default:
     equalTo = false;
 }
+
+let age = 15;
+let watchMovie = age > 14 ? true : false;
+
+let hotDog = false;
+let isHotDog = hotDog === true ? "Hot Dog" : "Not Hot Dog";
+
+alert(isHotDog)
