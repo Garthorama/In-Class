@@ -48,3 +48,8 @@ let cluster = [...firstSet, ...secondSet];
 let goodGrades = ["A", "B"];
 let notSoGoodGrades = ["C", "D", "F"];
 let grades = [...goodGrades, ... notSoGoodGrades];
+
+function addnumber() {
+    x = 28
+    return 
+}
