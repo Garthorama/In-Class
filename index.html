@@ -13,15 +13,27 @@
         <br/>
         <label for="LastName">Last Name:</label>
         <input id="LastName" name="lastName" required>
-
+        <br/>
         <label for=Age>Age:</label>
         <input id="Age" name="age" required>
-
+        <br/>
         <label for="PhoneNumber">Phone Number:</label>
         <input id="PhoneNumber" name="phoneNumber" required>
-
-        <label for="a"
+        <br/>
+        <label for="Address">Address:</label>
+        <input id="Address" name="address" required>
+        <br/>
+        <button onclick="idCard()">Creat ID</button>
     </form>
+    
+    <div id="idCard">
+        <img src="http://www.iconninja.com/files/373/611/612/person-user-profile-male-man-avatar-account-icon.svg">
+        <p id="postFullName"></p>
+        <p id="postAge"></p>
+        <p id="postPhoneNumber"></p>
+        <p id="postAddress"></p>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
