@@ -1,47 +1,31 @@
-import { createStore } from 'redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Home, Mine, Search, ImAwesome, Everyone, Prσfile } from './screens/index.js';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-const initialState = { value: 0 };
+const reducer = (state, action) => {
+    return state;
+} 
 
-const Counter = ({ value, onIncrement, onDecrement, onReset }) => (
-    <div>
-        <h2>Value: {value}</h2>
-        <button onClick={onIncrement}>+</button>
-        <button onClick={onReset}>Reset</button>
-        <button onClick={onDecrement}>-</button>
-    </div>
+const Index = ({ store }) =>
+(
+    <Provider store={store}>
+        <BrowserRouter>
+            <div>
+                <Route path="/profile" component={Prσfile} />
+                <Route path="/everyone" component={Everyone} />
+                <Route path="/imawesome" component={ImAwesome} />
+                <Route path="/mine" component={Mine} />
+                <Route path="/search" component={Search} />
+                <Route path="/" component={Home} exact/>
+            </div>
+        </BrowserRouter>
+    </Provider>
+)
+
+ReactDOM.render(
+    <Index store={createStore(reducer)}/>,
+    document.getElementById('root')
 );
-
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'INCREMENT':
-            return { ...state, value: state.value + action.payload };
-        case 'DECREMENT':
-            return { ...state, value: state.value - action.payload };
-        case 'RESET':
-            return { ...state, value: 0 };
-        default:
-            return state;
-    }
-}
-
-const store = createStore(reducer);
-
-const render = () => {
-    ReactDOM.render(
-        <Counter
-            value={store.getState().value}
-            onIncrement={() => store.dispatch({ type: 'INCREMENT', payload: 5 })}
-            onDecrement={() => store.dispatch({ type: 'DECREMENT', payload: 2 })}
-            onReset={() => store.dispatch({ type: 'RESET' })}
-        />,
-        document.getElementById('root')
-    )
-}
-store.subscribe(
-    () => {
-        console.log(store.getState());
-        render();
-    });
-render();
